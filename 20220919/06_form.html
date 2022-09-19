@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <input type="password" name="password" id="password">
+    <input type="password" name="password_confirmation" id="password_confirmation">
+    <button type="submit" name="submit-button" id="sub-button">제출</button>
+  </form>
+  <script>
+    const pw = document.querySelector('#password')
+    // 몰겄슴돠...///
+    pw.addEventListener('input',function(event){
+      const pw_confirm = document.querySelector('#password_confirmation')
+      pw_confirm.addEventListener('input',function(event){
+        const sub_btn = document.querySelector('#sub-button') 
+        sub_btn.addEventListener('click', function(event){
+          if(pw.length<8){
+            alert('비밀번호를 8자 이상 입력해 주세요')
+          }
+          else if(pw !== pw_confirm) {
+            alert("비밀번호가 일치하지 않습니다.") 
+          }
+          else{
+            console.log(pw,pw_confirm)
+          }
+          event.preventDefault()
+        })
+      })
+    })
+  
+  </script>
+</body>
+</html>
